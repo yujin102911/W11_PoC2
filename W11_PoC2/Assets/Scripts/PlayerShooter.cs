@@ -40,11 +40,6 @@ public class PlayerShooter : MonoBehaviour
 
     private bool isCollisioned = false;
 
-    void Start()
-    {
-        StartAngleAim();
-    }
-
 
     void Awake()
     {
@@ -53,6 +48,14 @@ public class PlayerShooter : MonoBehaviour
         line.positionCount = 2;
         line.enabled = false;
     }
+
+    void Start()
+    {
+        StartAngleAim();
+    }
+
+
+    
 
     void Update()
     {
@@ -65,13 +68,20 @@ public class PlayerShooter : MonoBehaviour
         // 스페이스로 확정 발사
         if (isAiming && Input.GetKeyDown(KeyCode.Space))
         {
-            ConfirmAngleShoot();
+            ConfirmAngleShoot(currentAngle);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("충돌했어요~");
+
+        if (collision.gameObject.CompareTag("Node"))
+        {
+            Debug.Log("사라질게요~");
+            Destroy(this.gameObject);
+        }
+
         isCollisioned = true;
         Invoke(nameof(ApplyStopDrag), 0.1f);
     }
@@ -191,16 +201,16 @@ public class PlayerShooter : MonoBehaviour
     }
 
     // 스페이스 누르면 각도 확정 후 발사
-    private void ConfirmAngleShoot()
+    public void ConfirmAngleShoot(float angle)
     {
         isAiming = false;
         line.enabled = false;
 
         // currentAngle → 방향 벡터
-        float rad = currentAngle * Mathf.Deg2Rad;
+        float rad = angle * Mathf.Deg2Rad;
         Vector2 dir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
 
-        float power = maxPower; // 원하면 파워 조절 가능
+        float power = maxPower;
 
         rb.linearDamping = 0;
         rb.AddForce(dir * power, ForceMode2D.Impulse);
