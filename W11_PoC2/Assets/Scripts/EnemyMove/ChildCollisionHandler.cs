@@ -1,14 +1,16 @@
-// (ÀÚ½Ä ¿ÀºêÁ§Æ®¿¡ ºÎÂøµÉ ½ºÅ©¸³Æ®)
+ï»¿// (ìì‹ ì˜¤ë¸Œì íŠ¸ì— ë¶€ì°©ë  ìŠ¤í¬ë¦½íŠ¸)
 using UnityEngine;
 
 public class ChildCollisionHandler : MonoBehaviour
 {
-    // 2D Æ®¸®°Å Ãæµ¹ °¨Áö ¹× µ¥¹ÌÁö ·ÎÁ÷
+    // 2D íŠ¸ë¦¬ê±° ì¶©ëŒ ê°ì§€ ë° ë°ë¯¸ì§€ ë¡œì§
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("ÇÃ·¹ÀÌ¾î¿¡°Ô µ¥¹ÌÁö¸¦ Áİ´Ï´Ù: " + other.gameObject.name);
+            StageManager.Instance.OnPlayerDied();
+            Destroy(other.gameObject);
+            Debug.Log("í”Œë ˆì´ì–´ì—ê²Œ ë°ë¯¸ì§€ë¥¼ ì¤ë‹ˆë‹¤: " + other.gameObject.name);
         }
     }
 }

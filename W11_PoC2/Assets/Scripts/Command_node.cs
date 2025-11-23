@@ -3,7 +3,7 @@
 public class Command_node : MonoBehaviour
 {
     [Header("ID")]
-    public int Node_ID = 0;
+    public string Node_ID;
 
     private Rigidbody2D rb;
     private LineRenderer line;
@@ -34,11 +34,21 @@ public class Command_node : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("스택 올려요~");
+            CommandStackManager.Instance.PushCommand(Node_ID);
             StartAngleAim();
         }
     }
-
+    //private string Node_ID_ToString()
+    //{
+    //    // 0 = R, 1 = Y, 2 = B 같은 방식
+    //    switch (Node_ID)
+    //    {
+    //        case 0: return "R";
+    //        case 1: return "Y";
+    //        case 2: return "B";
+    //    }
+    //    return "?";
+    //}
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
