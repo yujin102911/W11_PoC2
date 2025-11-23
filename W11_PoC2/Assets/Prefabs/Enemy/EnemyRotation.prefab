@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 2871809205210404895}
   - component: {fileID: 2098343365820107842}
   - component: {fileID: 762125027250912833}
+  - component: {fileID: 3685369757413058090}
   - component: {fileID: 5209967312263455677}
   m_Layer: 0
   m_Name: EnemyRotation
@@ -190,6 +191,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 360
+--- !u!114 &3685369757413058090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6673874736169301304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c04edc7e49053459bdee734e7f1c8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &5209967312263455677
 BoxCollider2D:
   m_ObjectHideFlags: 0

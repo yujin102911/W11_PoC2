@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 5720274059641690341}
   - component: {fileID: 590493906679894031}
   - component: {fileID: 106231157248183382}
+  - component: {fileID: 6231222028872092228}
   - component: {fileID: 3545679544022828675}
   m_Layer: 0
-  m_Name: EnemyPingPong
+  m_Name: EnemyHorizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,10 +102,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c53ee7ce7df46242914ee2b6b595551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointStart: {x: 0, y: 0, z: 0}
-  pointEnd: {x: 0, y: 0, z: 0}
-  speed: 2
+  pointStart: {x: 1.56, y: 0, z: 0}
+  pointEnd: {x: -11.12, y: -0.58, z: 0}
+  speed: 8.25
   snapToPathAngle: 0
+--- !u!114 &6231222028872092228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2887311666907715219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c04edc7e49053459bdee734e7f1c8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &3545679544022828675
 BoxCollider2D:
   m_ObjectHideFlags: 0
