@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815a2ccc8fb403d47a787162f1b9d4db, type: 3}
   m_Name: StageData
   m_EditorClassIdentifier: 
-  stageNumber: 0
+  stageNumber: 1
   EnemyMaxHP: 30
   PlayerMaxHP: 3
-  spawnPoint: {x: 0, y: 0, z: 0}
+  spawnPoint: {x: -5, y: -7, z: 0}

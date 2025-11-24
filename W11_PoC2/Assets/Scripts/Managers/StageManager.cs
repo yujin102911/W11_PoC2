@@ -74,6 +74,12 @@ public class StageManager : MonoBehaviour
         SpawnPlayer();
     }
     
+    public void OnEnemyAttack(int damage)
+    {
+        currentEnemyHP -= damage;
+        Debug.Log($"적 남은 체력: {currentEnemyHP}");
+    }
+
     /// <summary>
     /// 적 체력 다 까면 호출
     /// </summary>

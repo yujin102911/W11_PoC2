@@ -1,6 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+[System.Serializable]
+public class PatternDamagePair
+{
+    public string pattern;
+    public int damage;
+}
+
+
 public class CommandStackManager : MonoBehaviour
 {
     public static CommandStackManager Instance;
@@ -13,7 +21,7 @@ public class CommandStackManager : MonoBehaviour
     public string stackSequence = "";
 
     [Header("DB - 정답 패턴 목록")]
-    public List<string> validPatterns = new List<string>();
+    public List<PatternDamagePair> validPatterns = new List<PatternDamagePair>();
 
     private bool timerActive = false;
 
@@ -54,16 +62,22 @@ public class CommandStackManager : MonoBehaviour
     /// </summary>
     private void CheckPatternMatch()
     {
-        foreach (var pattern in validPatterns)
+        foreach (var pair in validPatterns)
         {
-            if (stackSequence == pattern)
+            if (stackSequence == pair.pattern)
             {
-                Debug.Log($"패턴 {pattern} 완성");
-                // TODO: 원하는 효과 실행
+                Debug.Log($"패턴 {pair.pattern} 완성");
+                ApplyDamage(pair.damage);
                 ResetStack();
                 return;
             }
         }
+    }
+
+    private void ApplyDamage(int damage)
+    {
+        StageManager.Instance.OnEnemyAttack( damage );
+        Debug.Log($"적에게 {damage}만큼의 피해를 줍니다");
     }
     public void ResetStack()
     {
