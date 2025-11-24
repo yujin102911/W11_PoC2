@@ -1303,7 +1303,8 @@ MonoBehaviour:
   maxDuration: 5
   stackSequence: 
   validPatterns:
-  - RYR
+  - pattern: RYR
+    damage: 5
 --- !u!1001 &2146705658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1535,6 +1536,10 @@ PrefabInstance:
     - target: {fileID: 6099522648866700685, guid: 98012e352ad755546a2b16259c58259d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 99.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 6952243250142191077, guid: 98012e352ad755546a2b16259c58259d, type: 3}
+      propertyPath: rotateSpeed
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
