@@ -65,6 +65,7 @@ public class StageManager : MonoBehaviour
     public void OnPlayerDied()
     {
         currentPlayerHP--;
+        CommandStackManager.Instance.ResetStack();
         if (currentPlayerHP <= 0) // 만약 플레이어의 라이프가 남아있지 않다면
         {
             Debug.Log("플레이어 라이프 0 => 게임 오버");
@@ -76,6 +77,12 @@ public class StageManager : MonoBehaviour
         SpawnPlayer();
     }
     
+    public void OnEnemyAttack(int damage)
+    {
+        currentEnemyHP -= damage;
+        Debug.Log($"적 남은 체력: {currentEnemyHP}");
+    }
+
     /// <summary>
     /// 적 체력 다 까면 호출
     /// </summary>
