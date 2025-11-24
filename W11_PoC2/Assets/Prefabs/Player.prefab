@@ -287,7 +287,7 @@ MonoBehaviour:
     m_Bits: 0
   Maxlength: 0
   powerMultiplier: 5
-  maxPower: 12
+  maxPower: 20
   stopVelocity: 0.08
   stopDrag: 0
 --- !u!1 &8343215139848054826
