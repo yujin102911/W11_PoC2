@@ -59,7 +59,7 @@ public class PlayerShooter : MonoBehaviour
 
     void Update()
     {
-        AutoStop();
+        //AutoStop();
 
         if (isAiming)
             UpdateAimLine();

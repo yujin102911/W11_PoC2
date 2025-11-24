@@ -55,6 +55,8 @@ public class CommandStackManager : MonoBehaviour
         stackSequence += nodeID;
         Debug.Log("현재 스택: " + stackSequence);
 
+        UIManager.Instance.UpdateNode(stackSequence, maxDuration);
+
         // 패턴 확인
         CheckPatternMatch();
     }
@@ -92,6 +94,7 @@ public class CommandStackManager : MonoBehaviour
     {
         Debug.Log("스택 초기화!");
         stackSequence = "";
+        UIManager.Instance.ClearNode();
         timerActive = false;
     }
 

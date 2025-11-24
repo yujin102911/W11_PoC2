@@ -289,7 +289,7 @@ MonoBehaviour:
   powerMultiplier: 5
   maxPower: 12
   stopVelocity: 0.08
-  stopDrag: 0.5
+  stopDrag: 0
 --- !u!1 &8343215139848054826
 GameObject:
   m_ObjectHideFlags: 0
