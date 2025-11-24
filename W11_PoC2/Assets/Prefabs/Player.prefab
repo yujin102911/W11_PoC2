@@ -279,7 +279,7 @@ MonoBehaviour:
   aimLength: 2
   minAngle: 25
   maxAngle: 155
-  rotateSpeed: 80
+  rotateSpeed: 150
   simulationSteps: 30
   timeStep: 0.05
   collisionMask:

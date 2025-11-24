@@ -367,8 +367,9 @@ MonoBehaviour:
   aimLength: 2
   minAngle: -90
   maxAngle: 30
-  rotateSpeed: 60
+  rotateSpeed: 200
   spawnDistance: 1.5
+  isAiming: 0
   powerMultiplier: 5
   maxPower: 12
   stopVelocity: 0.08

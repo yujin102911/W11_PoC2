@@ -39,6 +39,8 @@ public class StageManager : MonoBehaviour
         currentPlayerHP = stage.PlayerMaxHP;
 
         SpawnPlayer();
+
+        UIManager.Instance.UpdateHearts(currentPlayerHP);
     }
     #endregion
 
