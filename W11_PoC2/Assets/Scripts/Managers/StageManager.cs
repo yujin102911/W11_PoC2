@@ -23,6 +23,15 @@ public class StageManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SpawnPlayer();
+            //CommandStackManager.Instance.ResetStack();
+        }
+    }
+
     #endregion
 
     #region Initialization
