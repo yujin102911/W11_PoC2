@@ -63,6 +63,7 @@ public class StageManager : MonoBehaviour
     public void OnPlayerDied()
     {
         currentPlayerHP--;
+        CommandStackManager.Instance.ResetStack();
         if (currentPlayerHP <= 0) // 만약 플레이어의 라이프가 남아있지 않다면
         {
             Debug.Log("플레이어 라이프 0 => 게임 오버");

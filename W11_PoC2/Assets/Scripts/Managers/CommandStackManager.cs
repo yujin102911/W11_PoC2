@@ -41,6 +41,7 @@ public class CommandStackManager : MonoBehaviour
             ResetStack();
         }
     }
+
     /// <summary>
     /// 노드가 충돌을 알려줄 때 호출
     /// </summary>
@@ -57,6 +58,7 @@ public class CommandStackManager : MonoBehaviour
         // 패턴 확인
         CheckPatternMatch();
     }
+
     /// <summary>
     /// DB 패턴 검사
     /// </summary>
@@ -74,11 +76,18 @@ public class CommandStackManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 적에게 damage만큼의 피해를 적용하는 함수
+    /// </summary>
     private void ApplyDamage(int damage)
     {
         StageManager.Instance.OnEnemyAttack( damage );
         Debug.Log($"적에게 {damage}만큼의 피해를 줍니다");
     }
+
+    /// <summary>
+    /// 스택을 초기화 하는 함수
+    /// </summary>
     public void ResetStack()
     {
         Debug.Log("스택 초기화!");
