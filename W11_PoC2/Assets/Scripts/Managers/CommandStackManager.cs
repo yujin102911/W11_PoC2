@@ -17,6 +17,9 @@ public class CommandStackManager : MonoBehaviour
     public float maxDuration = 5f;
     private float timer = 0f;
 
+    [Header("스택 최대 길이")]
+    public int maxLength = 5;
+
     [Header("현재 누적된 커맨드 문자열")]
     public string stackSequence = "";
 
@@ -53,6 +56,12 @@ public class CommandStackManager : MonoBehaviour
 
         // 스택 문자 누적
         stackSequence += nodeID;
+
+        if(stackSequence.Length > maxLength )
+        {
+            stackSequence = stackSequence.Substring(1);
+        }
+
         Debug.Log("현재 스택: " + stackSequence);
 
         UIManager.Instance.UpdateNode(stackSequence, maxDuration);
