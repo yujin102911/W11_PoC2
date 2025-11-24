@@ -68,13 +68,22 @@ public class CommandStackManager : MonoBehaviour
     {
         foreach (var pair in validPatterns)
         {
-            if (stackSequence == pair.pattern)
+            string pattern = pair.pattern;
+
+            if (stackSequence.EndsWith(pattern))
             {
-                Debug.Log($"패턴 {pair.pattern} 완성");
+                Debug.Log($"패턴 {pattern} 완성");
                 ApplyDamage(pair.damage);
                 ResetStack();
                 return;
             }
+            //if (stackSequence == pair.pattern)
+            //{
+            //    Debug.Log($"패턴 {pair.pattern} 완성");
+            //    ApplyDamage(pair.damage);
+            //    ResetStack();
+            //    return;
+            //}
         }
     }
 

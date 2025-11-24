@@ -70,7 +70,12 @@ public class PlayerShooter : MonoBehaviour
         {
             ConfirmAngleShoot(currentAngle);
         }
-    }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Destroy(this.gameObject);
+        }
+    
+}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
