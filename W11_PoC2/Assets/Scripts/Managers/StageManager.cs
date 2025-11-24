@@ -12,6 +12,9 @@ public class StageManager : MonoBehaviour
     public int currentPlayerHP;
     public int currentEnemyHP;
 
+    private int maxPlayerHP;
+    private int maxEnemyHP;
+
     private GameObject currentPlayer;
     private StageData currentStage;
 
@@ -44,10 +47,16 @@ public class StageManager : MonoBehaviour
 
         Debug.Log($"StageManager: Stage {stage.stageNumber} 초기화 시작");
 
-        currentEnemyHP = stage.EnemyMaxHP;
-        currentPlayerHP = stage.PlayerMaxHP;
+        maxPlayerHP = stage.PlayerMaxHP;
+        maxEnemyHP = stage.EnemyMaxHP;
+
+        currentEnemyHP = maxEnemyHP;
+        currentPlayerHP = maxPlayerHP;
 
         SpawnPlayer();
+
+        UIManager.Instance.UpdateHearts(currentPlayerHP);
+        UIManager.Instance.UpdateEnemy(currentEnemyHP, maxEnemyHP);
     }
     #endregion
 
@@ -73,6 +82,8 @@ public class StageManager : MonoBehaviour
     {
         currentPlayerHP--;
         CommandStackManager.Instance.ResetStack();
+        UIManager.Instance.UpdateHearts(currentPlayerHP);
+
         if (currentPlayerHP <= 0) // 만약 플레이어의 라이프가 남아있지 않다면
         {
             Debug.Log("플레이어 라이프 0 => 게임 오버");
@@ -88,6 +99,7 @@ public class StageManager : MonoBehaviour
     {
         currentEnemyHP -= damage;
         Debug.Log($"적 남은 체력: {currentEnemyHP}");
+        UIManager.Instance.UpdateEnemy(currentEnemyHP, maxEnemyHP);
     }
 
     /// <summary>
