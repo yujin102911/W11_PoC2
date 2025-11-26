@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: StageData
   m_EditorClassIdentifier: 
   stageNumber: 0
-  EnemyMaxHP: 30
+  EnemyMaxHP: 15
   PlayerMaxHP: 3
   spawnPoint: {x: -5.84, y: -6.87, z: 0}

@@ -98,8 +98,20 @@ public class StageManager : MonoBehaviour
     public void OnEnemyAttack(int damage)
     {
         currentEnemyHP -= damage;
+
+        if (currentEnemyHP <= 0)
+        {
+            currentEnemyHP = 0;
+            UIManager.Instance.UpdateEnemy(currentEnemyHP, maxEnemyHP);
+            OnEnemyDied();
+        }
+        else{
+            UIManager.Instance.UpdateEnemy(currentEnemyHP, maxEnemyHP);
+        }
+            
+
         Debug.Log($"적 남은 체력: {currentEnemyHP}");
-        UIManager.Instance.UpdateEnemy(currentEnemyHP, maxEnemyHP);
+        
     }
 
     /// <summary>

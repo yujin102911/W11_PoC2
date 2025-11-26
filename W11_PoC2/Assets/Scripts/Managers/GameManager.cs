@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour
     public void OnGameOver()
     {
         Debug.Log("게임 오버");
+        Time.timeScale = 0.0f;
         // 추후 게임 오버 처리
         return;
     }
